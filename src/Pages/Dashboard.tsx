@@ -14,7 +14,7 @@ const Dashboard = (props: Props) => {
       },[])
   return (
     <div className='container bg-blue flex flex-col items-center justify-center'>
-            <h1 className='text-2xl mt-4 mb-4'>Data Representing Space Programs</h1>
+            <h1 className='text-2xl mt-10 mb-4'>Data Representing Space Programs</h1>
             <table className="table-auto border-collapse w-full text-left">
                 <thead>
                     <tr className='border-b-2 border-gray-300 bg-gray-100'>
