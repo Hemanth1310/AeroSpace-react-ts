@@ -7,24 +7,29 @@ import { BrowserRouter, Route, Routes } from 'react-router'
 import Header from './Components/Header'
 import Home from './Pages/Home'
 import { AuthContextProvider } from './Context/Context'
+import Unauthorized from './Pages/Unauthorized'
+import ProtectedRoutes from './Authentication/ProtectedRoutes'
+import Dashboard from './Pages/Dashboard'
+import AdminRoutes from './Authentication/AdminRoutes'
+import Status from './Pages/Status'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [data,setData] = useState<data>([])
-
-
-  useEffect(()=>{
-    const arr = generateProbeData(200)
-    setData(arr)
-  },[])
-
   return (
   <AuthContextProvider>
     <BrowserRouter>
         <Header/>
-        <Routes>
-            <Route path='/' element={<Home></Home>}/>
-        </Routes>
+        <div>
+          <Routes>
+              <Route path='/' element={<Home></Home>}/>
+              <Route path='/unauthorized' element={<Unauthorized/>}/>
+              <Route element={<ProtectedRoutes/>}>
+                  <Route path='/dashboard' element={<Dashboard/>}></Route>
+              </Route>
+              <Route element={<AdminRoutes/>}>
+                  <Route path='/status' element={<Status/>}/>
+              </Route>
+          </Routes>
+        </div>
     </BrowserRouter>
   </AuthContextProvider>
   )

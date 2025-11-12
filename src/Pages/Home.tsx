@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { useAuth } from '../Context/Context';
 import type { AuthUser } from '../types';
+import { useNavigate } from 'react-router';
 type Props = {}
 
 const Home = (props: Props) => {
 
     const [message,setMessage] = useState<string>('')
-
+    const navigate = useNavigate();
     const handleLogin = (e:React.FormEvent<HTMLFormElement>)=>{
         const formData = new FormData(e.currentTarget);
         const username = formData.get('username')
@@ -24,6 +25,7 @@ const Home = (props: Props) => {
                 role:username==='admin'?'admin':'websure' 
             } 
             handleUser(user)
+            navigate('/dashboard')
         }
     }
   return (
