@@ -1,7 +1,7 @@
 
 export type status = 'Operational'| 'Idle'| 'Maintenance'| 'Error'
 export type destination = 'Mars'| 'Jupiter'| 'Saturn'| 'Neptune'| 'Pluto'| 'Deep Space'
-export type UserRole = 'admin'|'websure'
+export type UserRole = 'admin'|'webuser'
 
 export type AuthUser = {
     username:string;

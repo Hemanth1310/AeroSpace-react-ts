@@ -18,7 +18,7 @@ function App() {
   <AuthContextProvider>
     <BrowserRouter>
         <Header/>
-        <div>
+        <div className='pt-[60px] flex flex-col justify-center items-center'>
           <Routes>
               <Route path='/' element={<Home></Home>}/>
               <Route path='/unauthorized' element={<Unauthorized/>}/>

@@ -7,7 +7,7 @@ type Props = {}
 const AdminRoutes = (props: Props) => {
   const {userData} = useAuth()
 
-  if(userData){
+  if(userData?.isLoggedIn){
     if(userData.role==='admin'){
         return <Outlet/>
     }else{

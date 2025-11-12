@@ -1,18 +1,20 @@
 import React, { useState } from 'react'
 import { useAuth } from '../Context/Context';
 import type { AuthUser } from '../types';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 type Props = {}
 
 const Home = (props: Props) => {
 
     const [message,setMessage] = useState<string>('')
     const navigate = useNavigate();
+    const {handleUser} = useAuth()
     const handleLogin = (e:React.FormEvent<HTMLFormElement>)=>{
+        e.preventDefault()
         const formData = new FormData(e.currentTarget);
         const username = formData.get('username')
         const password = formData.get('password')
-        const {handleUser} = useAuth()
+        
         if(typeof username !== 'string' || typeof password!=='string'){
             setMessage('Please Enter both userName and password')
             return
@@ -22,7 +24,7 @@ const Home = (props: Props) => {
             const user:AuthUser = {
                 username:username,
                 isLoggedIn:true, 
-                role:username==='admin'?'admin':'websure' 
+                role:username==='admin'?'admin':'webuser' 
             } 
             handleUser(user)
             navigate('/dashboard')

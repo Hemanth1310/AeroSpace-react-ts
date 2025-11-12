@@ -10,7 +10,7 @@ const ProtectedRoutes = (props: Props) => {
     if(userData?.isLoggedIn){
         return <Outlet/>
     }else{
-        return <Navigate to={'/unauthorized'} replace/>
+        return <Navigate to={'/'} replace/>
     }
 }
 
