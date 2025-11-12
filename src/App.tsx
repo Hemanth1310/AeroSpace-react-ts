@@ -12,6 +12,7 @@ import ProtectedRoutes from './Authentication/ProtectedRoutes'
 import Dashboard from './Pages/Dashboard'
 import AdminRoutes from './Authentication/AdminRoutes'
 import Status from './Pages/Status'
+import Logout from './Pages/Logout'
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
               <Route element={<AdminRoutes/>}>
                   <Route path='/status' element={<Status/>}/>
               </Route>
+              <Route path='/logout' element={<Logout/>}/>
           </Routes>
         </div>
     </BrowserRouter>

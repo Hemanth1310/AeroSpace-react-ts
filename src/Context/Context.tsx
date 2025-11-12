@@ -6,10 +6,12 @@ type AuthContextType = {
     handleUser:(newUserData:AuthUser)=>void
 } 
 
-const AuthContext = createContext<AuthContextType>({
+export const defaultUser = {
     userData:null,
     handleUser:()=>{}
-})
+}
+
+const AuthContext = createContext<AuthContextType>(defaultUser)
 
 export const AuthContextProvider =({children}:{children:React.ReactNode})=>{
     const [userData,setUser]= useState<AuthUser | null>(null)

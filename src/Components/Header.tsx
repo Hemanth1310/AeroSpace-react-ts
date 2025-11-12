@@ -14,7 +14,8 @@ const Header = (props: Props) => {
                 <div className='flex gap-4 '>
                     <NavLink to={'/'}>Home</NavLink>
                     <NavLink to={'/dashboard'}>Dashboard</NavLink>
-                    {userData?.role==='admin' && <NavLink to={'/status'}>Status</NavLink>}   
+                    {userData?.role==='admin' && <NavLink to={'/status'}>Status</NavLink>}
+                    <NavLink to={'/logout'} >Logout</NavLink>   
                 </div>
                 }
 
