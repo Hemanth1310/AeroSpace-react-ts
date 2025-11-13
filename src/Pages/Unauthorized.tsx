@@ -1,10 +1,7 @@
-import React from 'react'
 
-type Props = {}
-
-const Unauthorized = (props: Props) => {
+const Unauthorized = () => {
   return (
-    <div>Unauthorized</div>
+    <div className="text-3xl">Unauthorized</div>
   )
 }
 

@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 import { useAuth } from '../Context/Context';
 import type { AuthUser } from '../types';
 import { useNavigate } from 'react-router-dom';
-type Props = {}
 
-const Home = (props: Props) => {
+const Home = () => {
 
     const [message,setMessage] = useState<string>('')
     const navigate = useNavigate();
@@ -34,8 +33,8 @@ const Home = (props: Props) => {
     <div className='h-screen flex flex-col justify-center items-center gap-4'>
         <h1 className='text-3xl'>Welcome to AeroSpace</h1>
         <form onSubmit={handleLogin} className='flex flex-col gap-4'>
-            <input className='border rounded border-2 p-4 min-w-[300px]' type='text' name='username' placeholder='username'/>
-            <input className='border rounded border-2 p-4 min-w-[300px]' type='password' name='password' placeholder='password'/>
+            <input className='rounded border-2 p-4 min-w-[300px]' type='text' name='username' placeholder='username'/>
+            <input className='rounded border-2 p-4 min-w-[300px]' type='password' name='password' placeholder='password'/>
             <button className='bg-gray-950 p-4 text-white'>Login</button>
         </form>
         {message!=='' && <div>{message}</div>}

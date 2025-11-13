@@ -1,10 +1,7 @@
-import React from 'react'
 import { useAuth } from '../Context/Context'
 import { Navigate, Outlet } from 'react-router-dom'
 
-type Props = {}
-
-const AdminRoutes = (props: Props) => {
+const AdminRoutes = () => {
   const {userData} = useAuth()
 
   if(userData?.isLoggedIn){

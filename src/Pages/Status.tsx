@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import type {data} from '../types'
 import { generateProbeData } from '../data/data'
-type Props = {}
 
-const Status = (props: Props) => {
+const Status = () => {
     const [data,setData] = useState<data>([])
     const [currentPage,setCurrrentPage] = useState<number>(1)
     const ItemsPerPage = 10;

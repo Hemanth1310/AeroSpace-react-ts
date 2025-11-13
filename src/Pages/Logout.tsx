@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useAuth } from '../Context/Context'
 import type { AuthUser } from '../types';
 import { useNavigate } from 'react-router';
 
-type Props = {}
-
-const Logout = (props: Props) => {
+const Logout = () => {
 
     const {userData,handleUser} = useAuth();
     const navigate = useNavigate()

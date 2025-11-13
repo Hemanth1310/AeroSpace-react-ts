@@ -1,10 +1,7 @@
-import React from 'react'
 import { NavLink } from 'react-router'
 import { useAuth } from '../Context/Context'
 
-type Props = {}
-
-const Header = (props: Props) => {
+const Header = () => {
     const {userData} = useAuth()
   return (
     <div className='w-screen h-[60px] bg-gray-950 flex items-center justify-center fixed '>

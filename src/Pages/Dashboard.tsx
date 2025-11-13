@@ -1,10 +1,8 @@
-import React ,{useState, useEffect}from 'react'
+import {useState, useEffect}from 'react'
 import { generateProbeData } from '../data/data'
 import type { data } from '../types'
 
-type Props = {}
-
-const Dashboard = (props: Props) => {
+const Dashboard = () => {
 
     const [data,setData] = useState<data>([])
     const [currentPage,setCurrrentPage] = useState<number>(1)   
