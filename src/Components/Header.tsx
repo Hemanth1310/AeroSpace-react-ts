@@ -12,7 +12,6 @@ const Header = (props: Props) => {
              <h1>AeroSpace</h1>   
                 {userData?.isLoggedIn && 
                 <div className='flex gap-4 '>
-                    <NavLink to={'/'}>Home</NavLink>
                     <NavLink to={'/dashboard'}>Dashboard</NavLink>
                     {userData?.role==='admin' && <NavLink to={'/status'}>Status</NavLink>}
                     <NavLink to={'/logout'} >Logout</NavLink>   
